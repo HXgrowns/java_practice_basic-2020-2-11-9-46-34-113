@@ -6,6 +6,11 @@ import java.util.Set;
 
 public class CardMachine {
     public void drawCard(int n) {
+        if (n > Card.cards.size()) {
+            System.out.println("输入超过扑克的总数");
+            return;
+        }
+
         Set<Integer> indexes = new LinkedHashSet<>();
         Random random = new Random();
         while (indexes.size() < n) {
